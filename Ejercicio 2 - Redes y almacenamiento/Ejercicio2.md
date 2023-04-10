@@ -21,7 +21,7 @@ docker volume create ejercicio2
 Ahora que ya tengo creada la red y el volumen, ya puedo crear el contenedor con la imagen de mariadb. Siguiendo las instrucciones del ejercicio lo mapeo en el puerto 3306, declaro la variable de entorno para establecer la contraseña del usuario root y lo enlazo con la red y el volumen anteriormente creados.
 
 ```bash
-docker run -d --name bbdd -p 3306:80 -v ejercicio2:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root --network bdnet 
+docker run -d --name bbdd -p 3306:80 -v ejercicio2:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root --network bdnet mariadb
 ```
 Nota: para enlazar mariadb al volumen hay que utilizar la url `/var/lib/mysql`.
 
